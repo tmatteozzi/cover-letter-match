@@ -24,14 +24,14 @@ Escribe tu carta de presentación a partir de tu CV y la oferta que tenés abier
 
 **Categoría:** Productividad → Herramientas (o *Productivity*)
 
-**Descripción detallada:**
+**Descripción detallada:** (sin listar marcas: Google la rechazó una vez por *keyword stuffing* al nombrar todos los sitios de empleo)
 
 ```
 Cover Letter Match escribe una carta de presentación (o un mensaje corto para el reclutador) a partir de tu CV y de la oferta laboral que tenés abierta. Todo pasa en tu computadora: usa la IA integrada de Chrome (Gemini Nano), así que no necesitás clave de API, ni cuenta, ni tus datos salen de tu equipo.
 
 CÓMO FUNCIONA
 1. Subí tu CV en PDF una sola vez. La IA arma tu perfil automáticamente y lo revisás.
-2. Abrí una oferta en LinkedIn, Computrabajo, Bumeran, ZonaJobs, Indeed, Seeds, Universia u otro sitio de empleo.
+2. Abrí una oferta en tu sitio de empleo favorito.
 3. Abrí el panel lateral y tocá "Generar carta". La carta se escribe en segundos, lista para editar y copiar.
 
 QUÉ INCLUYE
@@ -57,7 +57,7 @@ REQUISITOS
 
 Revisá siempre la carta antes de enviarla: la escribe un modelo de IA.
 
-Proyecto independiente y de código abierto (licencia MIT). No está afiliado a Google, LinkedIn, Computrabajo, Bumeran, ZonaJobs, Indeed, Seeds ni Universia.
+Proyecto independiente y de código abierto (licencia MIT). No está afiliado a Google ni a ningún sitio de empleo.
 ```
 
 **Imágenes** (en esta carpeta):
