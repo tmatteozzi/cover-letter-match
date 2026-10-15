@@ -138,6 +138,7 @@ When you open the panel (or click **Recargar oferta**), the extension injects th
   - **host permissions** for the supported job boards — so the panel can re-read a post after you move to another job without clicking the icon again. On other sites, click the icon on the post.
 - The company logo is loaded directly from the job board's own image server (the same image you already see on the page).
 - **Borrar mis datos** (in Perfil) wipes everything the extension stored.
+- Full privacy policy: [PRIVACY.md](PRIVACY.md).
 
 ---
 

@@ -5,7 +5,7 @@ export default defineManifest({
   manifest_version: 3,
   name: "Cover Letter Match",
   version: "0.1.0",
-  description: "Writes a cover letter matching your CV to the job posting, using Chrome's local AI.",
+  description: "Escribe tu carta de presentación a partir de tu CV y la oferta que tenés abierta, con la IA local de Chrome.",
   // LAS APIs DE IA INTEGRADA (LanguageModel, LanguageDetector) REQUIEREN CHROME 138+
   minimum_chrome_version: "138",
   permissions: ["sidePanel", "storage", "activeTab", "scripting"],
