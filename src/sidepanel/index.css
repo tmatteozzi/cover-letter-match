@@ -1,0 +1,129 @@
+/* ESTILOS GLOBALES DEL SIDE PANEL: TAILWIND, PALETA, TIPOGRAFÍA Y ANIMACIONES. */
+@import "tailwindcss";
+
+/* SOLO TEMA CLARO, A PROPÓSITO: EL PANEL USA SIEMPRE LA PALETA DEL ÍCONO. */
+@custom-variant dark (&:is(.dark *));
+
+/* PALETA DEL ÍCONO DE LA EXTENSIÓN (AZUL SOBRE, VERDE CHECK, GRIS PIZARRA) SOBRE FONDO BLANCO.
+   CONTRASTE (WCAG AA): primary #2563EB SOBRE BLANCO 5.17:1; TEXTO accent #1D4FD8 SOBRE #EAF0FE 5.82:1;
+   TEXTO muted #56637F SOBRE BLANCO 6.02:1 Y SOBRE #F4F6FA 5.6:1; TEXTO success #0E7C57 SOBRE BLANCO 5.2:1;
+   destructive #B42318 SOBRE BLANCO 6.6:1. */
+:root {
+  color-scheme: light;
+  --radius: 0.75rem;
+  --background: #ffffff;
+  --foreground: #16203a;
+  --card: #ffffff;
+  --card-foreground: #16203a;
+  --popover: #ffffff;
+  --popover-foreground: #16203a;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --secondary: #f4f6fa;
+  --secondary-foreground: #16203a;
+  --muted: #f4f6fa;
+  --muted-foreground: #56637f;
+  --accent: #eaf0fe;
+  --accent-foreground: #1d4fd8;
+  --destructive: #b42318;
+  --destructive-foreground: #ffffff;
+  --border: #e9edf5;
+  --input: #dce2ee;
+  --ring: #2563eb;
+  --success: #16a374;
+  --success-foreground: #0e7c57;
+  --warning: #b54708;
+}
+
+/* EXPONE LAS VARIABLES COMO COLORES Y RADIOS DE TAILWIND (bg-primary, rounded-lg, ETC.) */
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+}
+
+/* ANIMACIONES: ENTRADA DE PANTALLA (FUNDIDO) Y BARRA DE PROGRESO INDETERMINADA */
+@theme {
+  --animate-screen-in: screen-in 150ms ease-out both;
+  --animate-indeterminate: indeterminate 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+  @keyframes screen-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes indeterminate {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(300%); }
+  }
+}
+
+/* ESCALA TIPOGRÁFICA (MÁXIMO 4 NIVELES POR PANTALLA): hero 17, body 14, secondary 13, meta 12.
+   t-welcome (20) ES EL TÍTULO DEL ONBOARDING. */
+@utility t-hero {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+@utility t-welcome {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+@utility t-body {
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+@utility t-sec {
+  font-size: 13px;
+  line-height: 1.45;
+}
+@utility t-meta {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: 0.005em;
+}
+
+/* BASE: BORDES Y OUTLINE CON LOS COLORES DEL TEMA; CUERPO CON TIPOGRAFÍA Y SIN SCROLL HORIZONTAL */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground t-body antialiased overflow-x-hidden;
+  }
+}
+
+/* ACCESIBILIDAD: CASI ANULA ANIMACIONES Y TRANSICIONES SI EL USUARIO PIDE MENOS MOVIMIENTO */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
